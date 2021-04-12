@@ -2,51 +2,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {box-sizing: border-box}
-
-/* Set height of body and the document to 100% */
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial;
-}
-
-/* Style tab links */
-.tablink {
-  background-color:green;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
-}
-
-.tablink:hover {
-  background-color:grey;
-}
-.container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-  color: black;
-  display: none;
-  padding: 100px 20px;
-  height: 100%;
-}
-
-#Home {background-color: lightblue;}
-#News {background-color: lightblue;}
-#Contact {background-color: lightblue;}
-#About {background-color: lightblue;}
-</style>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
 
@@ -71,18 +28,18 @@ body, html {
         <div class="container">
             <form onsubmit="alertFunction(firstname,whatsappNo,emailAddress)">
                 <label for="fname">First Name</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+                <input type="text" id="fname" name="firstname" placeholder="Name" required>
 
                 <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                <input type="text" id="lname" name="lastname" placeholder="Last Name">
 
                 <label for="whatsappNo">Whatsapp Number</label>
-                <input type="text" id="whatsappNo" name="whatsappNo" placeholder="Will ping you there" required>
+                <input type="text" id="whatsappNo" name="whatsappNo" placeholder="Active Whatsapp no" required>
                 <label for="email">Email</label>
-                <input type="text" id="email" name="emailAddress" placeholder="Your email details" required>
+                <input type="text" id="email" name="emailAddress" placeholder="Primary Mail Id" required>
 
-                <label for="subject">Subject</label>
-                <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+                <label for="subject">Comments</label>
+                <textarea id="subject" name="subject" placeholder="Write some Comments over here    " style="height:100px"></textarea>
 
                 <input type="submit" value="Submit">
             </form>
@@ -90,28 +47,23 @@ body, html {
 </div>
 
 <div id="Gallry" class="tabcontent">
-  <h3>Gallry</h3>
-  <p>I Will add Gallary photos here </p>
+  <h3>Gallary</h3>
+  <p>Some random pics are added here </p>
+  <div class="row">
+      <div class="column">
+          <img src="bfly.jpeg">
+          <img src="butterfly.jpeg">
+      </div>
+      <div class="column">
+          <img src="deer.jpeg">
+          <img src="download.jpeg">
+      </div>
+      <div class="column">
+          <img src="life.jpeg">
+          
+      </div>
+  </div>
 </div>
 
-<script>
-function openPage(pageName,elmnt,color) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(pageName).style.display = "block";
-  elmnt.style.backgroundColor = color;
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
-   
 </body>
 </html> 
